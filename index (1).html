@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07110c">
+  <meta name="description" content="PY-CURITY S.A.S. — Proyecto tecnológico orientado a fortalecer la seguridad de las bicicletas mediante un sistema de bloqueo electrónico.">
+  <title>PY-CURITY S.A.S. | Seguridad inteligente para bicicletas</title>
+  <style>
+    :root{--bg:#070b09;--panel:#0e1711;--panel2:#111e15;--green:#7cf29a;--green2:#32c765;--text:#f0f6f1;--muted:#a4b4a8;--line:rgba(124,242,154,.18);--max:1120px}
+    *{box-sizing:border-box} html{scroll-behavior:smooth;scroll-padding-top:90px}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65}
+    a{color:inherit;text-decoration:none} .wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+    .nav{position:sticky;top:0;z-index:10;background:rgba(7,11,9,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+    .navin{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:.08em}.logo{width:40px;height:40px;border:1px solid var(--green);border-radius:12px;display:grid;place-items:center;color:var(--green);font-weight:900;box-shadow:0 0 25px #32c76522}
+    .brand small{display:block;color:var(--muted);font-size:.64rem;letter-spacing:.18em;font-weight:600;margin-top:-4px}
+    .links{display:flex;align-items:center;gap:22px;font-size:.86rem;color:#c2cec5}.links a:hover{color:var(--green)}
+    .menu{display:none;background:none;color:var(--text);border:1px solid var(--line);border-radius:9px;padding:8px 11px;font-size:1rem}
+    .hero{position:relative;overflow:hidden;padding:95px 0 82px;background:radial-gradient(ellipse at 80% 35%,#153c244d 0,transparent 42%),linear-gradient(180deg,#0a120d 0%,var(--bg) 100%)}
+    .hero:after{content:"";position:absolute;width:480px;height:480px;border:1px solid #7cf29a17;border-radius:50%;right:-130px;top:30px;box-shadow:0 0 0 55px #7cf29a08,0 0 0 110px #7cf29a05;pointer-events:none}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:55px;align-items:center;position:relative;z-index:1}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--green);text-transform:uppercase;letter-spacing:.18em;font-size:.72rem;font-weight:800}
+    .dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green)}
+    h1{font-size:clamp(2.8rem,6vw,5.2rem);line-height:1.02;letter-spacing:-.055em;margin:20px 0 22px}
+    h1 span{color:var(--green)} .hero p{color:var(--muted);max-width:610px;font-size:1.08rem}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+    .btn{display:inline-flex;justify-content:center;align-items:center;gap:9px;border:1px solid var(--line);padding:12px 18px;border-radius:10px;font-weight:750;font-size:.9rem;transition:.2s}
+    .btn.primary{background:var(--green);color:#07110c;border-color:var(--green)}.btn:hover{transform:translateY(-2px);border-color:var(--green)}
+    .hero-card{border:1px solid var(--line);border-radius:22px;background:linear-gradient(145deg,#14251a,#0a110c 70%);padding:28px;box-shadow:0 25px 80px #0008;position:relative}
+    .cardtop{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase}
+    .status{color:var(--green);border:1px solid #7cf29a40;border-radius:30px;padding:5px 9px;font-size:.68rem}
+    .device{height:220px;display:grid;place-items:center;position:relative;margin:20px 0}
+    .ring{position:absolute;width:205px;height:205px;border:1px solid #7cf29a44;border-radius:50%;box-shadow:0 0 50px #32c76513,inset 0 0 35px #32c7650b}
+    .ring:before,.ring:after{content:"";position:absolute;inset:20px;border:1px dashed #7cf29a38;border-radius:50%}.ring:after{inset:42px}
+    .chip{width:110px;height:110px;border-radius:28px;background:linear-gradient(145deg,#193e27,#0c1c11);border:1px solid #7cf29a70;display:grid;place-items:center;color:var(--green);font-size:2.7rem;box-shadow:0 0 45px #32c76522}
+    .specs{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.spec{padding:12px 8px;background:#ffffff05;border:1px solid #ffffff0c;border-radius:11px;text-align:center}.spec b{display:block;color:var(--green);font-size:.9rem}.spec span{color:var(--muted);font-size:.68rem}
+    section{padding:86px 0}.section-head{max-width:720px;margin-bottom:34px}.kicker{color:var(--green);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:800}
+    h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1.12;letter-spacing:-.04em;margin:12px 0 16px} .lead{color:var(--muted);font-size:1.02rem}
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}.panel{border:1px solid var(--line);border-radius:18px;background:var(--panel);padding:25px}
+    .panel h3{margin:10px 0;font-size:1.15rem}.panel p,.panel li{color:var(--muted);font-size:.94rem}.iconbox{width:44px;height:44px;display:grid;place-items:center;border-radius:12px;background:#7cf29a12;color:var(--green);font-size:1.35rem}
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}.step{padding:20px;border:1px solid var(--line);background:linear-gradient(180deg,#112016,#0a100c);border-radius:15px;position:relative}.num{color:var(--green);font-size:.74rem;letter-spacing:.1em;font-weight:900}.step h3{font-size:1rem;margin:10px 0 7px}.step p{color:var(--muted);font-size:.85rem;margin:0}
+    .note{border-left:3px solid var(--green);padding:13px 16px;background:#7cf29a0b;color:var(--muted);font-size:.87rem;margin-top:22px}
+    .survey{display:grid;grid-template-columns:.8fr 1.2fr;gap:25px;align-items:stretch}.bigstat{display:flex;flex-direction:column;justify-content:center;min-height:230px}.bigstat strong{font-size:4.3rem;line-height:1;color:var(--green);letter-spacing:-.06em}.bigstat span{color:var(--muted);margin-top:12px}
+    .barrow{margin:20px 0}.barlabel{display:flex;justify-content:space-between;gap:15px;font-size:.9rem;margin-bottom:8px}.barlabel span:last-child{color:var(--green);font-weight:800}.bar{height:9px;background:#ffffff0c;border-radius:30px;overflow:hidden}.fill{height:100%;background:linear-gradient(90deg,#32c765,#a0ffb2);border-radius:30px}
+    .company-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.values{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.pill{border:1px solid var(--line);color:#c7d8cb;border-radius:30px;padding:7px 11px;font-size:.8rem}
+    .prototype{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center}.visual-placeholder{min-height:300px;border-radius:20px;border:1px dashed #7cf29a55;background:radial-gradient(circle at 50% 40%,#1b462b66,transparent 45%),#0c1510;display:grid;place-items:center;text-align:center;padding:28px;color:var(--muted)}.visual-placeholder strong{display:block;color:var(--green);font-size:1.1rem;margin:12px 0 4px}
+    .footer{padding:30px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}.footin{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .reveal{animation:rise .7s ease both}@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+    @media(max-width:800px){.links{display:none;position:absolute;top:76px;left:0;right:0;background:#09100b;padding:18px 24px 22px;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--line)}.links.open{display:flex}.menu{display:block}.hero{padding:65px 0}.hero-grid,.grid2,.survey,.prototype{grid-template-columns:1fr}.hero-grid{gap:35px}.steps{grid-template-columns:repeat(2,1fr)}.company-grid{grid-template-columns:1fr}.hero:after{right:-300px}.device{height:190px}}
+    @media(max-width:480px){.wrap{width:min(var(--max),calc(100% - 28px))}.navin{height:68px}.links{top:68px}section{padding:64px 0}.hero{padding:55px 0}.hero-card{padding:20px}.steps{grid-template-columns:1fr}.specs{gap:6px}.spec{padding:10px 4px}.bigstat strong{font-size:3.5rem}}
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap navin">
+      <a class="brand" href="#inicio" aria-label="PY-CURITY inicio"><span class="logo">P</span><span>PY-CURITY<small>S.A.S. · SEGURIDAD INTELIGENTE</small></span></a>
+      <button class="menu" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <nav class="links" id="navLinks" aria-label="Navegación principal">
+        <a href="#problema">El problema</a><a href="#solucion">Solución</a><a href="#prototipo">Prototipo</a><a href="#encuesta">Encuesta</a><a href="#empresa">Empresa</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="wrap hero-grid">
+        <div class="reveal">
+          <div class="eyebrow"><span class="dot"></span> Innovación aplicada a la movilidad</div>
+          <h1>Tu bicicleta.<br><span>Más protegida.</span></h1>
+          <p>En PY-CURITY S.A.S. desarrollamos una propuesta tecnológica orientada a fortalecer la seguridad de las bicicletas mediante un sistema de bloqueo electrónico controlado desde una página web.</p>
+          <div class="actions"><a class="btn primary" href="#solucion">Conoce la solución <span>↗</span></a><a class="btn" href="#prototipo">Explorar el prototipo</a></div>
+        </div>
+        <div class="hero-card reveal">
+          <div class="cardtop"><span>Proyecto tecnológico</span><span class="status">● Prototipo funcional</span></div>
+          <div class="device"><div class="ring"></div><div class="chip">⌁</div></div>
+          <div class="specs"><div class="spec"><b>ESP32</b><span>Control</span></div><div class="spec"><b>MQTT</b><span>Comunicación</span></div><div class="spec"><b>12 V*</b><span>Electroimán</span></div></div>
+          <p style="font-size:.72rem;color:var(--muted);margin:14px 0 0">*Voltaje correspondiente al electroimán utilizado en el montaje del proyecto.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="problema">
+      <div class="wrap">
+        <div class="section-head"><div class="kicker">01 / El problema</div><h2>La seguridad de una bicicleta importa.</h2><p class="lead">La bicicleta es un medio de transporte, una herramienta de trabajo y una forma de hacer actividad física. Sin embargo, el riesgo de hurto genera preocupación entre sus usuarios y hace necesario explorar alternativas de protección.</p></div>
+        <div class="grid2">
+          <article class="panel"><div class="iconbox">⌕</div><h3>Una necesidad real</h3><p>Los métodos tradicionales de seguridad pueden tener limitaciones según el tipo de candado, el lugar y las condiciones en las que se estaciona la bicicleta.</p></article>
+          <article class="panel"><div class="iconbox">↗</div><h3>Nuestra pregunta de investigación</h3><p>¿Cómo puede una solución tecnológica de bloqueo electrónico contribuir a fortalecer la seguridad de las bicicletas?</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="solucion" style="background:#0a100c">
+      <div class="wrap">
+        <div class="section-head"><div class="kicker">02 / Nuestra solución</div><h2>Un sistema de bloqueo con control electrónico.</h2><p class="lead">PY-CURITY integra componentes electrónicos y una interfaz web para enviar una orden de control al prototipo. El objetivo es demostrar cómo la tecnología puede aplicarse a una necesidad cotidiana.</p></div>
+        <div class="steps">
+          <article class="step"><div class="num">PASO 01</div><h3>Interfaz web</h3><p>El usuario interactúa con una página que permite enviar la orden de control.</p></article>
+          <article class="step"><div class="num">PASO 02</div><h3>Mensaje MQTT</h3><p>La comunicación transmite el mensaje a través del tópico configurado para el proyecto.</p></article>
+          <article class="step"><div class="num">PASO 03</div><h3>ESP32 y relé</h3><p>La ESP32 recibe la orden y controla el circuito mediante el módulo de relé.</p></article>
+          <article class="step"><div class="num">PASO 04</div><h3>Electroimán</h3><p>El circuito acciona el electroimán según la configuración del prototipo.</p></article>
+        </div>
+        <div class="note">Esta página es explicativa y no está conectada al dispositivo. El prototipo se controla desde la interfaz y el sistema electrónico configurados para la demostración.</div>
+      </div>
+    </section>
+
+    <section id="prototipo">
+      <div class="wrap prototype">
+        <div>
+          <div class="kicker">03 / El prototipo</div><h2>Una idea construida y puesta a prueba.</h2>
+          <p class="lead">El prototipo reúne una ESP32, un módulo de relé y un electroimán, con control mediante una página web y comunicación MQTT. Durante el desarrollo se integraron el software y los componentes físicos para comprobar el funcionamiento del bloqueo.</p>
+          <div class="panel" style="margin-top:20px"><h3>Componentes principales</h3><ul><li><b>ESP32:</b> procesa los mensajes de control.</li><li><b>Módulo de relé:</b> conmuta el circuito de carga.</li><li><b>Electroimán:</b> elemento de bloqueo del montaje.</li><li><b>Interfaz web:</b> permite enviar las órdenes.</li><li><b>MQTT:</b> canal de comunicación entre la interfaz y el dispositivo.</li></ul></div>
+        </div>
+        <div class="visual-placeholder"><div><div style="font-size:3.4rem;color:#7cf29a">▦</div><strong>Agrega aquí las fotos reales</strong><span>Reemplaza este espacio por una foto del prototipo armado, el cableado o una imagen de la demostración.</span></div></div>
+      </div>
+    </section>
+
+    <section id="encuesta" style="background:#0a100c">
+      <div class="wrap">
+        <div class="section-head"><div class="kicker">04 / Consulta a la comunidad</div><h2>¿Qué nos dicen las respuestas?</h2><p class="lead">En una encuesta exploratoria realizada a 41 personas se preguntó por la experiencia con el hurto de bicicletas y la percepción de los métodos tradicionales de seguridad.</p></div>
+        <div class="survey">
+          <div class="panel bigstat"><strong>41</strong><span>respuestas recopiladas</span><p>Los resultados ayudan a contextualizar el problema y conocer algunas percepciones de la comunidad consultada.</p></div>
+          <div class="panel">
+            <h3>Experiencias y percepción de seguridad</h3>
+            <div class="barrow"><div class="barlabel"><span>Conocen a alguien a quien le robaron la bicicleta</span><span>85,4%</span></div><div class="bar"><div class="fill" style="width:85.4%"></div></div></div>
+            <div class="barrow"><div class="barlabel"><span>Consideran que los candados tradicionales no son suficientes</span><span>61%</span></div><div class="bar"><div class="fill" style="width:61%"></div></div></div>
+            <div class="barrow"><div class="barlabel"><span>Depende del lugar y del tipo de candado</span><span>36,6%</span></div><div class="bar"><div class="fill" style="width:36.6%"></div></div></div>
+            <div class="barrow"><div class="barlabel"><span>Respondieron que sí son suficientes</span><span>2,4%</span></div><div class="bar"><div class="fill" style="width:2.4%"></div></div></div>
+            <p style="font-size:.75rem;color:var(--muted)">Porcentajes reportados por el equipo. Las dos últimas categorías corresponden a la pregunta sobre suficiencia de los candados tradicionales.</p>
+          </div>
+        </div>
+        <div class="note">Estos resultados describen únicamente las respuestas recogidas; no representan necesariamente a toda la población de la localidad.</div>
+      </div>
+    </section>
+
+    <section id="empresa">
+      <div class="wrap">
+        <div class="section-head"><div class="kicker">05 / Quiénes somos</div><h2>Tecnología con un propósito.</h2><p class="lead">PY-CURITY S.A.S. es una iniciativa de proyecto empresarial que busca diseñar, desarrollar y comercializar soluciones tecnológicas orientadas a la seguridad de las bicicletas.</p></div>
+        <div class="company-grid">
+          <article class="panel"><div class="iconbox">◎</div><h3>Misión</h3><p>Diseñar, desarrollar y comercializar soluciones tecnológicas que contribuyan a mejorar la seguridad de las bicicletas.</p></article>
+          <article class="panel"><div class="iconbox">⌁</div><h3>Visión</h3><p>Ser una empresa reconocida a nivel nacional por sus propuestas e innovaciones tecnológicas para la seguridad de las bicicletas.</p></article>
+          <article class="panel"><div class="iconbox">✳</div><h3>Valores</h3><p>Principios que orientan nuestro trabajo y la forma en que desarrollamos el proyecto.</p><div class="values"><span class="pill">Responsabilidad</span><span class="pill">Honestidad</span><span class="pill">Compromiso</span><span class="pill">Innovación</span><span class="pill">Trabajo en equipo</span></div></article>
+        </div>
+        <div class="panel" style="margin-top:16px"><h3>Proyecto académico</h3><p>Desarrollado en el Colegio Ciudad de Bogotá, en la localidad de Tunjuelito. La comunidad educativa es el público principal de esta propuesta.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="wrap footin"><span>© <span id="year"></span> PY-CURITY S.A.S. · Proyecto tecnológico</span><a href="#inicio">Volver al inicio ↑</a></div></footer>
+  <script>
+    const menuBtn=document.getElementById('menuBtn');
+    const navLinks=document.getElementById('navLinks');
+    menuBtn.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));menuBtn.textContent=open?'✕':'☰';});
+    navLinks.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{navLinks.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');menuBtn.textContent='☰';}));
+    document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>
